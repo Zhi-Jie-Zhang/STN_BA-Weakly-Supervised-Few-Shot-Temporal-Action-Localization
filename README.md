@@ -1,1 +1,0 @@
-# STAFT-Weakly-Supervised-Few-Shot-Temporal-Action-Localization
