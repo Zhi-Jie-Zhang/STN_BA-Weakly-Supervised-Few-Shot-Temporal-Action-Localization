@@ -40,10 +40,13 @@
 与训练类似，都是运行main.py 程序，参数变一下就行，dataset代码数据集，默认是Thumos14reduced，所以上面训练Thumos14时没指定，另外对于测试，还需要下载模型参数，让在--load参数中指定模型参数的路径；
 由于我之前训练的模型已经找不到，所以这里先不提供了，有兴趣的话可以自己先跑一遍训练，这个模型跑训练很快，我使用GTX1070跑完Thumos14只需要一个小时时间；
 跑完的模型参数会保存在./models文件夹中
+
 --split=cvpr18 --dataset=Thumos14reduced --num_in=4 --encoder --tsm=ip --sample_num_per_class=1 --mode=testing --load=./models/Thumos14reduced_5way_1shot_split_cvpr18_enc_True_tsm_ip_lcent_0_indim_4_test/best.pth --Tolerate_error=0
+
 --split=cvpr18 --dataset=Thumos14reduced --num_in=4 --encoder --tsm=ip --sample_num_per_class=5 --mode=testing --load=./models/Thumos14reduced_5way_5shot_split_cvpr18_enc_True_tsm_ip_lcent_0_indim_4_test/best.pth --Tolerate_error=0
 
 --split=cvpr18 --dataset=ActivityNet1.2 --num_in=4 --encoder --tsm=ip --sample_num_per_class=1 --mode=testing --load=./models/ActivityNet1.2_5way_1shot_split_cvpr18_enc_True_tsm_ip_lcent_0_indim_4_test/best.pth --Tolerate_error=2
+
 --split=cvpr18 --dataset=ActivityNet1.2 --num_in=4 --encoder --tsm=ip --sample_num_per_class=5 --mode=testing --load=./models/ActivityNet1.2_5way_5shot_split_cvpr18_enc_True_tsm_ip_lcent_0_indim_4_test/best.pth --Tolerate_error=2
 
 
@@ -55,10 +58,15 @@
 ### For different split strategies
 ### Put the category names of the different categories into the split_dataset function of the VideoDataset category in the dataset.py file, then set the names of the divisions, and change the value of split= to that name in the test
 --split=Sequence70/30 --dataset=ActivityNet1.2 --num_in=4 --encoder --tsm=ip --sample_num_per_class=1 --Tolerate_error=2
+
 --split=Sequence60/40 --dataset=ActivityNet1.2 --num_in=4 --encoder --tsm=ip --sample_num_per_class=1 --Tolerate_error=2
+
 --split=Sequence50/50 --dataset=ActivityNet1.2 --num_in=4 --encoder --tsm=ip --sample_num_per_class=1 --Tolerate_error=2
+
 --split=random --dataset=ActivityNet1.2 --num_in=4 --encoder --tsm=ip --sample_num_per_class=1 --Tolerate_error=2
 
 --split='Sequence70/30' --dataset='ActivityNet1.2' --num_in=4 --encoder --tsm='ip' --sample_num_per_class=1 --Tolerate_error=2
+
 --split='Sequence60/40' --dataset='ActivityNet1.2' --num_in=4 --encoder --tsm='ip' --sample_num_per_class=1 --Tolerate_error=2
+
 --split='Sequence50/50' --dataset='ActivityNet1.2' --num_in=4 --encoder --tsm='ip' --sample_num_per_class=1 --Tolerate_error=2
